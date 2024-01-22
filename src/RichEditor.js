@@ -140,7 +140,8 @@ export default class RichTextEditor extends Component {
 
   onMessage(event) {
     const that = this;
-    const {onFocus, onBlur, onChange, onPaste, onKeyUp, onKeyDown, onInput, onMessage, onCursorPosition, onLink} = that.props;
+    const {onFocus, onBlur, onChange, onPaste, onKeyUp, onKeyDown, onInput, onMessage, onCursorPosition, onLink} =
+      that.props;
     try {
       const message = JSON.parse(event.nativeEvent.data);
       const data = message.data;
@@ -276,7 +277,7 @@ export default class RichTextEditor extends Component {
           onShouldStartLoadWithRequest={event => {
             if (event.url !== 'about:blank') {
               this.webviewBridge?.stopLoading();
-              Linking?.openURL(event.url);
+              // Linking?.openURL(event.url);
               return false;
             }
             return true;
